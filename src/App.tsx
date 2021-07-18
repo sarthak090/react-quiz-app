@@ -1,5 +1,14 @@
+import { QuizProvider } from "./context/quizscore.context";
+import MainPage from "./pages/MainPage";
+
 function App() {
-  return <div className="container mx-auto ">quiz app</div>;
+  return (
+    <main className="bg-lightBlue h-screen">
+      <QuizProvider>
+        <MainPage />
+      </QuizProvider>
+    </main>
+  );
 }
 
 export default App;
