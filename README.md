@@ -1,5 +1,6 @@
 # Quizeer - Quiz App created with react js and typescript .
 
+![app.quiz](quizzer.png)
 
 ## Setup
 
