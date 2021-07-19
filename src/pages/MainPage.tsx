@@ -12,6 +12,8 @@ interface Iquiz {
   question: string;
   type: string;
 }
+const ENDPOINT =
+  "https://opentdb.com/api.php?amount=15&category=9&difficulty=medium&type=multiple";
 export default function MainPage() {
   const [quizess, setQuizess] = useState<Iquiz[]>([]);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -23,9 +25,7 @@ export default function MainPage() {
     setEndQuiz(false);
     resetScores();
 
-    const res = await fetch(
-      "https://opentdb.com/api.php?amount=15&category=9&difficulty=medium&type=multiple"
-    );
+    const res = await fetch(ENDPOINT);
     const resData = await res.json();
     setQuizess(resData.results);
     setCurrentQuizInd(0);
